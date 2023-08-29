@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Input</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <h4>Dynamic Select Options Form</h4>
+        <form>
+
+            <div class="form-group">
+                <label for="continents">Continents:</label>
+                <select id="continents" name="continents">
+                    <option value="" selected disabled>Select One</option>
+                    <% continents.forEach(continent=>{ %>
+                        <option value="<%= continent %>"><%= continent %></option>
+                   <% }) %>
+                </select>
+            </div>
+
+            <div class="form-group" id="countries" style="display: none;">
+                <label for="countries">Countries:</label>
+                <select name="countries">
+                    <option value="" selected disabled>Select One</option>
+                </select>
+            </div>
+
+            <button type="submit"> Submit</button>
+
+        </form>
+    </div>
+
+    <script src="/axios/axios.min.js"></script>
+    <script src="../js/script.js"></script>
+</body>
+
+</html>
